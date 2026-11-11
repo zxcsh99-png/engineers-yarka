@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>הנדסאים במקיף אחווה ירכא – חשמל ואלקטרוניקה</title>
+<meta name="description" content="בוגרי י״ב? מסלולי הנדסאי חשמל והנדסאי אלקטרוניקה במכללת מקיף אחווה ירכא. ללא פסיכומטרי, מלגה לזכאים, הכשרה מעשית.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="בוגרי י״ב? הצטרפו לעתיד הטכנולוגי">
+<meta property="og:description" content="מסלולי הנדסאי חשמל והנדסאי אלקטרוניקה במכללת מקיף אחווה ירכא. ללא פסיכומטרי, מלגה לזכאים, הכשרה מעשית.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:image" content="https://YOURNAME.github.io/REPO/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://YOURNAME.github.io/REPO/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1d211a; --ink-soft:#55594b; --paper:#f4f3ee; --card:rgba(255,255,255,.58);
+  --line:#d9d7ca; --gb:rgba(255,255,255,.8); --orange:#c9673a; --amber:#e0a458; --wa:#1fa855; --wa-ink:#ffffff;
+  --hero-bg:#21261a; --hero-ink:#f7f5ee; --trace:#e0a458;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#ece9df; --ink-soft:#aaa798; --paper:#13150f; --card:rgba(255,255,255,.07); --line:#33352a; --gb:rgba(255,255,255,.14);
+    --hero-bg:#181c12;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(60% 40% at 90% 12%,rgba(122,132,80,.32),transparent 70%),radial-gradient(50% 35% at 8% 48%,rgba(201,103,58,.2),transparent 70%),radial-gradient(60% 40% at 80% 85%,rgba(31,61,47,.24),transparent 70%),var(--paper);background-attachment:fixed;color:var(--ink);font-family:"Heebo",system-ui,Arial,sans-serif;font-size:18px;line-height:1.6;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hero-bg);z-index:10}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+/* hero */
+.hero{background-color:var(--hero-bg);background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:28px 28px;color:var(--hero-ink);padding:22px 0 0;overflow:hidden}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;margin-bottom:34px}
+.brand i{width:12px;height:12px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(201,103,58,.4)}
+.hero h1{margin:0;font-weight:800;font-size:clamp(40px,12vw,76px);line-height:1.05;letter-spacing:-.02em}
+.hero h1 span{display:block;color:var(--amber)}
+.hero p.lead{font-size:clamp(20px,5vw,26px);margin:18px 0 0;max-width:30ch;font-weight:500}
+.hero .tomorrow{margin-top:26px;font-size:15px;letter-spacing:.35em;opacity:.8}
+.hero .tomorrow b{letter-spacing:.35em;color:var(--amber)}
+.trace{display:block;width:100%;height:90px;margin-top:22px}
+.trace path{fill:none;stroke:var(--trace);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.2s .3s ease-out forwards}
+.trace circle{fill:var(--trace);opacity:0;animation:pop .3s 2.3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.trace path{animation:none;stroke-dashoffset:0}.trace circle{animation:none;opacity:1}}
+
+/* illustrations */
+.hero{position:relative}
+.hero .wrap{position:relative;z-index:1}
+.bulb{width:48px;height:48px;margin-inline-start:auto;overflow:visible}
+.bulb .glass{fill:#ffd23f;animation:flick 3.2s infinite}
+.bulb .ray{stroke:#ffd23f;stroke-width:3;stroke-linecap:round;animation:flick 3.2s infinite}
+@keyframes flick{0%,100%{opacity:1}8%{opacity:.3}12%{opacity:1}55%{opacity:.75}60%{opacity:1}}
+.trace path.pulse{stroke:#fff;stroke-width:5;stroke-dasharray:2 70;stroke-dashoffset:0;opacity:.9;animation:flow 2.5s 2.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-72}}
+.floatbolt{position:absolute;z-index:0;width:30px;fill:var(--amber);opacity:.45;animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px) rotate(8deg)}}
+.art{display:block;width:100%;max-width:300px;height:auto;margin:0 auto 20px;overflow:visible}
+.plug{animation:pluggedin 3.4s ease-in-out infinite}
+@keyframes pluggedin{0%,25%{transform:translate(0,0)}45%,80%{transform:translate(26px,14px)}100%{transform:translate(0,0)}}
+.spark{fill:#ffd23f;opacity:0;animation:spark 3.4s infinite}
+.spark.s2{animation-delay:.12s}.spark.s3{animation-delay:.25s}
+@keyframes spark{0%,40%{opacity:0}44%{opacity:1}50%{opacity:0}56%{opacity:.9}62%,100%{opacity:0}}
+.led{opacity:.2;animation:ledrun 2.4s infinite}
+@keyframes ledrun{0%{opacity:1}35%,100%{opacity:.2}}
+.tester{animation:bob2 5s ease-in-out infinite}
+@keyframes bob2{50%{transform:translateY(-7px)}}
+.tip{fill:#ffd23f;opacity:0;animation:spark 2.4s 1s infinite}
+.track{position:relative}
+.ico{position:absolute;inset-block-start:18px;inset-inline-end:18px;width:46px;height:46px;overflow:visible}
+.ico .pin{stroke:var(--amber);stroke-width:2;animation:flick 2s infinite}
+.ico .body{fill:none;stroke:var(--orange);stroke-width:2.5}
+.ico .dot{fill:var(--amber);animation:flick 1.4s infinite}
+.ico .bolt{fill:var(--amber);animation:boltglow 2.2s ease-in-out infinite}
+@keyframes boltglow{50%{filter:drop-shadow(0 0 6px var(--amber));opacity:.7}}
+@media (prefers-reduced-motion:reduce){.bulb *,.art *,.ico *,.floatbolt{animation:none!important}.trace path.pulse{opacity:0}.led{opacity:.85}}
+
+.fields{display:grid;gap:14px}
+@media(min-width:620px){.fields{grid-template-columns:1fr 1fr}}
+.field{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px}
+.field .art{max-width:260px;margin-bottom:14px;color:var(--ink)}
+.field h3{margin:0 0 10px;font-size:22px;font-weight:800}
+.field ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.field li{padding-inline-start:22px;position:relative;font-weight:500;font-size:17px}
+.field li::before{content:"";position:absolute;inset-inline-start:0;top:.7em;width:10px;height:3px;background:var(--orange)}
+.sun-rays{transform-origin:190px 38px;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.shine{fill:#fff;opacity:0;animation:shine 3.6s ease-in-out infinite}
+@keyframes shine{0%{opacity:0;transform:translateX(-8px)}35%{opacity:.4}70%,100%{opacity:0;transform:translateX(52px)}}
+.flow2{fill:none;stroke:var(--amber);stroke-width:3;stroke-dasharray:3 12;stroke-linecap:round;animation:flow2 1.2s linear infinite}
+@keyframes flow2{to{stroke-dashoffset:-30}}
+.wave{fill:none;stroke:#5dffb0;stroke-width:2.5;animation:wave 2s linear infinite}
+@keyframes wave{to{transform:translateX(-55px)}}
+.knob{animation:spin 8s linear infinite}
+.path{list-style:none;margin:0;padding:0;padding-inline-start:38px;position:relative;display:grid;gap:22px}
+.path::before{content:"";position:absolute;inset-inline-start:10px;top:10px;bottom:10px;width:3px;background:var(--line)}
+.path::after{content:"";position:absolute;inset-inline-start:5px;top:0;width:13px;height:13px;border-radius:50%;background:var(--amber);box-shadow:0 0 12px var(--amber);animation:runner 4s ease-in-out infinite}
+@keyframes runner{0%{top:0;opacity:0}10%,90%{opacity:1}100%{top:calc(100% - 13px);opacity:0}}
+.path li{position:relative}
+.path li::before{content:"";position:absolute;inset-inline-start:-35px;top:.3em;width:17px;height:17px;border-radius:50%;background:var(--paper);border:3px solid var(--orange)}
+.path strong{display:block;font-size:20px;font-weight:800}
+.path span{color:var(--ink-soft);font-size:16px}
+@media (prefers-reduced-motion:reduce){.path::after{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:6px;font:700 19px/1 "Heebo",sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-wa{background:var(--wa);color:var(--wa-ink)}
+.btn-wa:active{transform:translateY(1px)}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn svg{width:24px;height:24px;flex:none}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 0}
+.hero{padding-bottom:34px}
+
+/* sections */
+section{padding:54px 0 0}
+h2{font-size:clamp(28px,7vw,38px);line-height:1.15;margin:0 0 20px;font-weight:900}
+
+.tracks{display:grid;gap:14px}
+@media(min-width:620px){.tracks{grid-template-columns:1fr 1fr}}
+.track{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px;border-inline-start:8px solid var(--orange)}
+.track:nth-child(2){border-inline-start-color:var(--amber)}
+.track small{color:var(--ink-soft);font-size:15px;font-weight:500}
+.track h3{margin:2px 0 0;font-size:26px;font-weight:900}
+
+.reasons{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.reasons li{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line);font-weight:500}
+.reasons li::before{content:"";flex:none;width:12px;height:12px;margin-top:9px;background:var(--orange);border-radius:3px}
+.reasons li:nth-child(even)::before{background:var(--amber)}
+
+.get{background:var(--hero-bg);color:var(--hero-ink);border-radius:8px;padding:28px 24px}
+.get h2{color:var(--amber)}
+.get ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.get li{padding-inline-start:30px;position:relative;font-weight:500}
+.get li::before{content:"";position:absolute;inset-inline-start:0;top:.7em;width:18px;height:3px;background:var(--amber);border-radius:2px}
+
+.contact{text-align:center}
+.panel{background:var(--hero-bg);color:var(--hero-ink);border-radius:10px;padding:38px 18px 36px;position:relative;overflow:hidden}
+.panel::before{content:"";position:absolute;inset:-40% -20% auto;height:80%;background:radial-gradient(closest-side,rgba(224,164,88,.25),transparent);pointer-events:none}
+.panel>*{position:relative}
+.contact h2{color:var(--hero-ink)}
+.contact p{margin:0 0 4px;opacity:.75}
+.contact .who{font-size:24px;font-weight:700}
+.ringer{width:88px;height:88px;margin:0 auto 20px;display:grid;place-items:center;border-radius:50%;background:var(--amber);color:#14213a;position:relative}
+.ringer::before,.ringer::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--amber);animation:ring 2s ease-out infinite}
+.ringer::after{animation-delay:1s}
+.ringer svg{width:40px;height:40px;animation:shake 2.4s ease-in-out infinite}
+@keyframes ring{from{transform:scale(1);opacity:.9}to{transform:scale(2.3);opacity:0}}
+@keyframes shake{0%,55%,100%{transform:rotate(0)}10%,30%{transform:rotate(-16deg)}20%,40%{transform:rotate(16deg)}}
+.contact .num{display:inline-flex;direction:ltr;font-size:clamp(38px,12vw,64px);font-weight:900;color:var(--amber);text-decoration:none;margin:8px 0 22px;line-height:1.1}
+.num .d{display:inline-block;opacity:0;transform:translateY(.7em) scale(.8)}
+.num.in .d{animation:digit .55s cubic-bezier(.2,.9,.3,1.3) forwards;animation-delay:calc(var(--i)*80ms)}
+.num.in{animation:glow 2.6s 1.4s ease-in-out infinite}
+@keyframes digit{to{opacity:1;transform:none}}
+@keyframes glow{0%,100%{text-shadow:0 0 0 rgba(224,164,88,0)}50%{text-shadow:0 0 22px rgba(224,164,88,.6)}}
+.contact .cta-row{justify-content:center;margin:0}
+.panel .btn-wa{min-height:64px;font-size:21px;padding:0 32px;animation:wapulse 2s ease-out infinite}
+@keyframes wapulse{0%{box-shadow:0 0 0 0 rgba(31,168,85,.65)}100%{box-shadow:0 0 0 24px rgba(31,168,85,0)}}
+@media (prefers-reduced-motion:reduce){.ringer::before,.ringer::after,.ringer svg,.num.in,.panel .btn-wa{animation:none}.num .d{opacity:1;transform:none;animation:none!important}}
+.limit{display:inline-block;margin-bottom:18px;background:var(--amber);color:#14213a;padding:6px 16px;border-radius:4px;font-weight:700;font-size:16px}
+footer{text-align:center;color:var(--ink-soft);font-size:14px;padding:44px 20px 10px}
+
+/* sticky whatsapp bar */
+.sticky{position:fixed;inset:auto 0 0;z-index:20;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--paper);border-top:1px solid var(--line)}
+.sticky .btn{width:100%;max-width:520px;margin:0 auto;display:flex}
+/* liquid glass */
+.brand{background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3);padding:8px 18px;border-radius:99px}
+.track,.field{background:var(--card);-webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);border:1px solid var(--gb);border-inline-start:6px solid #7a8450;border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 12px 32px rgba(40,46,28,.12)}
+.field li::before{background:#7a8450}
+.reasons li::before{background:#7a8450;border-radius:50%}
+.reasons li:nth-child(even)::before{background:var(--orange)}
+.get{background:linear-gradient(145deg,#2b211b,#523a29);border-radius:24px}
+.panel{background:linear-gradient(145deg,#16302a,#2a4a33);border-radius:24px}
+.get,.panel{border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 18px 40px rgba(20,24,14,.25)}
+.limit{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.35);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:99px;padding:6px 18px}
+.btn{border-radius:16px}
+.btn-wa{background:linear-gradient(180deg,#34c96b,#1b9a4d);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 8px 20px rgba(31,168,85,.35)}
+.sticky{background:var(--card);-webkit-backdrop-filter:blur(20px) saturate(170%);backdrop-filter:blur(20px) saturate(170%);border-top:1px solid var(--gb)}
+
+/* registration form */
+.reg{padding-top:54px}
+.formcard{background:var(--card);-webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);border:1px solid var(--gb);border-radius:24px;padding:26px 20px 22px;box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 12px 32px rgba(40,46,28,.12)}
+.formcard .sub{margin:-8px 0 20px;color:var(--ink-soft)}
+.fld{display:block;margin-bottom:16px}
+.fld span{display:block;font-weight:700;font-size:16px;margin-bottom:6px}
+.fld em{font-style:normal;font-weight:400;color:var(--ink-soft)}
+.fld input,.fld select,.fld textarea{width:100%;min-height:52px;padding:12px 14px;font:500 17px/1.3 "Heebo",system-ui,sans-serif;color:var(--ink);background:var(--card);border:1px solid var(--gb);border-radius:14px;box-shadow:inset 0 1px 3px rgba(40,46,28,.14)}
+.fld textarea{min-height:100px;resize:vertical}
+.fld input[type=tel]{direction:ltr;text-align:right}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:3px solid var(--amber);outline-offset:1px}
+.formcard .btn{width:100%;margin-top:6px}
+.formnote{margin:14px 0 0;font-size:14px;color:var(--ink-soft);text-align:center}
+#sent{display:none;margin:14px 0 0;text-align:center;font-weight:700}
+.btn-form{background:linear-gradient(180deg,#e0a458,#c9673a);color:#1d211a;box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+.sticky{display:flex;gap:10px;justify-content:center}
+.sticky .btn{flex:1;width:auto;max-width:260px;margin:0;font-size:17px;padding:0 12px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="floatbolt" style="top:150px;inset-inline-start:5%" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
+  <svg class="floatbolt" style="top:300px;inset-inline-end:7%;animation-delay:-2s;width:22px" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
+  <div class="wrap">
+    <div class="brand"><i></i>מכללת מקיף אחווה ירכא
+      <svg class="bulb" viewBox="0 0 48 48" aria-hidden="true"><g class="ray" ><line x1="24" y1="1" x2="24" y2="6"/><line x1="6" y1="20" x2="1" y2="20"/><line x1="42" y1="20" x2="47" y2="20"/><line x1="10" y1="7" x2="13" y2="10"/><line x1="38" y1="7" x2="35" y2="10"/></g><circle class="glass" cx="24" cy="20" r="11"/><rect x="19" y="31" width="10" height="8" rx="2" fill="#cfd5c9"/><rect x="20" y="40" width="8" height="3" rx="1.5" fill="#cfd5c9"/></svg></div>
+    <h1>בוגרי י״ב?<span>הצטרפו לעתיד הטכנולוגי</span></h1>
+    <p class="lead">מסלולי הנדסאי חשמל והנדסאי אלקטרוניקה</p>
+    <div class="tomorrow">המקצועות של <b>המחר</b></div>
+    <svg class="trace" viewBox="0 0 600 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M600 45 H470 L440 15 H340 L310 70 H210 L180 45 H60 L30 45 H0" vector-effect="non-scaling-stroke"/>
+      <path class="pulse" d="M600 45 H470 L440 15 H340 L310 70 H210 L180 45 H60 L30 45 H0" vector-effect="non-scaling-stroke"/>
+      <circle cx="600" cy="45" r="7"/><circle cx="0" cy="45" r="7"/>
+    </svg>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>שני מסלולים, תעודה אחת מוכרת</h2>
+    <div class="tracks">
+      <div class="track"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path class="bolt" d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><small>מסלול</small><h3>הנדסאי חשמל</h3></div>
+      <div class="track"><svg class="ico" viewBox="0 0 44 44" aria-hidden="true"><rect class="body" x="11" y="11" width="22" height="22" rx="3"/><circle class="dot" cx="22" cy="22" r="3.5"/><g class="pin"><path d="M16 11V5M22 11V5M28 11V5M16 33v6M22 33v6M28 33v6M11 16H5M11 22H5M11 28H5M33 16h6M33 22h6M33 28h6"/></g></svg><small>מסלול</small><h3>הנדסאי אלקטרוניקה</h3></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>במה תעסקו?</h2>
+    <div class="fields">
+      <article class="field">
+        <svg class="art" viewBox="0 0 240 150" aria-hidden="true">
+          <g class="sun-rays" stroke="#ffb400" stroke-width="3" stroke-linecap="round"><path d="M190 12v8M190 56v8M168 38h-8M220 38h-8M174 22l-5-5M206 54l5 5M206 22l5-5M174 54l-5 5"/></g>
+          <circle cx="190" cy="38" r="14" fill="#ffc857"/>
+          <polygon points="30,110 110,110 125,70 45,70" fill="#134e4a" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M37.5 90H117.5M56.7 110 71.7 70M83.3 110 98.3 70" stroke="#7fd6c2" stroke-width="1.5"/>
+          <polygon class="shine" points="40,110 52,110 67,70 55,70"/>
+          <path d="M70 110v20M48 130h44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <path class="flow2" d="M118 96Q165 96 165 128H228"/>
+        </svg>
+        <h3>הנדסאי חשמל</h3>
+        <ul><li>לוחות חשמל והתקנות</li><li>תאורה ותכנון מערכות</li><li>אנרגיה סולרית</li><li>בטיחות ובדיקות בחשמל</li></ul>
+      </article>
+      <article class="field">
+        <svg class="art" viewBox="0 0 240 150" aria-hidden="true">
+          <defs><clipPath id="scr"><rect x="42" y="27" width="110" height="88" rx="6"/></clipPath></defs>
+          <rect x="30" y="15" width="180" height="115" rx="10" fill="#2b2f33"/>
+          <rect x="42" y="27" width="110" height="88" rx="6" fill="#0b1f19"/>
+          <path d="M42 71H152M97 27V115M69.500 27V115M124.500 27V115M42 49H152M42 93H152" stroke="#1d4a3a" stroke-width="1"/>
+          <g clip-path="url(#scr)"><path class="wave" d="M42 71q13.750-30 27.500 0t27.500 0 27.500 0 27.500 0 27.500 0 27.500 0 27.500 0 27.500 0"/></g>
+          <circle cx="180" cy="42" r="10" fill="#555"/><g class="knob" style="transform-origin:180px 42px"><path d="M180 42V34" stroke="#e9ece4" stroke-width="2.500" stroke-linecap="round"/></g>
+          <circle cx="180" cy="78" r="10" fill="#555"/><g class="knob" style="transform-origin:180px 78px;animation-direction:reverse"><path d="M180 78V70" stroke="#e9ece4" stroke-width="2.500" stroke-linecap="round"/></g>
+          <rect x="168" y="104" width="12" height="8" rx="2" fill="#c9673a"/><rect x="186" y="104" width="12" height="8" rx="2" fill="#e0a458"/>
+          <path d="M120 130Q120 146 70 146" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <h3>הנדסאי אלקטרוניקה</h3>
+        <ul><li>מעגלים אלקטרוניים</li><li>מדידות ובדיקות במעבדה</li><li>אוטומציה ובקרה</li><li>מערכות משובצות ותקשורת</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>מה אחרי הלימודים?</h2>
+    <ol class="path">
+      <li><strong>לימודים והכשרה מעשית</strong><span>בכיתות ובמעבדות, עם ליווי אישי</span></li>
+      <li><strong>תעודת הנדסאי מוכרת</strong><span>על ידי משרד החינוך</span></li>
+      <li><strong>עבודה בתחום או המשך לימודים</strong><span>קידום לתואר ראשון + תעודת הוראה, ושילוב לימודים ועבודה</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>למה דווקא אצלנו?</h2>
+    <ul class="reasons">
+      <li>מסלול מנצח במקיף אחווה ירכא</li>
+      <li>לימודים ללא פסיכומטרי</li>
+      <li>מלגת לימודים לזכאים</li>
+      <li>הכשרה מעשית במעבדות</li>
+      <li>ליווי אישי לאורך כל הדרך</li>
+      <li>סגל מרצים מקצועי ומנוסה</li>
+      <li>אווירה משפחתית תומכת</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="get">
+      <svg class="art" viewBox="0 0 220 170" aria-hidden="true">
+        <rect x="110" y="55" width="100" height="100" rx="12" fill="#ffc857"/>
+        <circle cx="160" cy="105" r="34" fill="#fff"/>
+        <rect x="146" y="90" width="8" height="30" rx="4" fill="#14213a"/>
+        <rect x="168" y="90" width="8" height="30" rx="4" fill="#14213a"/>
+        <g class="plug">
+          <path d="M-30 20 H30 Q44 20 44 36 V52" fill="none" stroke="#e9ece4" stroke-width="8" stroke-linecap="round"/>
+          <g transform="rotate(30 70 70)">
+            <rect x="40" y="58" width="44" height="24" rx="5" fill="#3aa58f"/>
+            <rect x="84" y="54" width="10" height="32" rx="2" fill="#e9ece4"/>
+            <rect x="94" y="60" width="26" height="5" rx="2" fill="#e9ece4"/>
+            <rect x="94" y="75" width="26" height="5" rx="2" fill="#e9ece4"/>
+          </g>
+        </g>
+        <path class="spark" d="M12 0 2 14h6L5 26 16 10h-6z" transform="translate(118 56)"/>
+        <path class="spark s2" d="M12 0 2 14h6L5 26 16 10h-6z" transform="translate(96 96) scale(.8)"/>
+        <path class="spark s3" d="M12 0 2 14h6L5 26 16 10h-6z" transform="translate(132 130) scale(.7)"/>
+      </svg>
+      <h2>
+      <ul>
+        <li>הכשרה מקצועית מקיפה</li>
+        <li>תעודה מוכרת ע״י משרד החינוך</li>
+        <li>מסלול עתודה טכנולוגית</li>
+        <li>מסלול קידום לתואר ראשון + תעודת הוראה</li>
+        <li>שילוב לימודים ועבודה</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="reg" id="register">
+    <div class="formcard">
+      <h2>הרשמה מהירה</h2>
+      <p class="sub">ממלאים כמה פרטים, והם נשלחים ישירות לרכזת.</p>
+      <form id="regform" action="https://formspree.io/f/mrpqzlpj" method="POST">
+        <input type="hidden" name="_subject" value="הרשמה חדשה – הנדסאים ירכא">
+        <label class="fld"><span>שם מלא</span><input name="name" type="text" autocomplete="name" required></label>
+        <label class="fld"><span>טלפון</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="050-0000000" pattern="[0-9 +\-]{9,15}" required></label>
+        <label class="fld"><span>יישוב <em>(לא חובה)</em></span><input name="city" type="text" autocomplete="address-level2"></label>
+        <label class="fld"><span>איזה מסלול מעניין אותך?</span>
+          <select name="track" required>
+            <option>הנדסאי חשמל</option>
+            <option>הנדסאי אלקטרוניקה</option>
+            <option>עוד לא החלטתי</option>
+          </select></label>
+        <label class="fld"><span>הערה <em>(לא חובה)</em></span><textarea name="note" rows="3"></textarea></label>
+        <button class="btn btn-form" type="submit">שליחה</button>
+      </form>
+      <p id="sent">הוואטסאפ נפתח עם הפרטים שלך, רק לוחצים על שליחה. אם לא נפתח, <a href="https://wa.me/972509985077" target="_blank" rel="noopener">לחצו כאן</a>.</p>
+      <p class="formnote">הפרטים נשלחים ישירות לרכזת, בלי הרשמה לשום אתר.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact"><div class="panel">
+    <div class="ringer" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.100.4 2.300.6 3.600.6.600 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.600 21 3 13.400 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1l-2.300 2.200Z"/></svg></div>
+    <span class="limit">מספר המקומות מוגבל</span>
+    <h2>צרו קשר עוד היום!</h2>
+    <p>רכזת ההנדסאים</p>
+    <div class="who">אמאל כנעאן</div>
+    <a class="num" id="num" href="tel:+972509985077" aria-label="050-9985077">050-9985077</a>
+    <div class="cta-row">
+      <a class="btn btn-wa wa-link" href="https://wa.me/972509985077" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.900-4.300-5.100-4.500-.1-.2-1.200-1.600-1.200-3s.8-2.100 1-2.400c.3-.3.600-.3.800-.3h.6c.2 0 .4 0 .6.500l.9 2.100c.1.200.1.400 0 .500l-.3.500-.4.400c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.600-.1l.9-1.100c.2-.3.400-.2.700-.1l2 .9c.3.100.5.200.5.300.1.200.1.800-.1 1.500Z"/></svg>
+        שלחו הודעה בוואטסאפ
+      </a>
+    </div>
+<svg class="art" style="margin-top:28px" viewBox="0 0 300 150" aria-hidden="true">
+      <g class="tester"><g transform="rotate(-16 150 80)">
+        <path d="M80 62 26 44" stroke="#e53935" stroke-width="4" stroke-linecap="round"/>
+        <circle class="tip" cx="24" cy="43" r="7"/>
+        <path d="M80 92 20 108" stroke="#1b1b1b" stroke-width="5" stroke-linecap="round"/>
+        <path d="M226 77C255 77 270 62 300 70M226 88C255 92 270 100 300 96" fill="none" stroke="#111" stroke-width="5"/>
+        <rect x="78" y="52" width="140" height="50" rx="10" fill="#ffc233"/>
+        <rect x="90" y="60" width="92" height="34" rx="6" fill="#2b2b2b"/>
+        <circle class="led" cx="102" cy="77" r="4" fill="#e53935"/>
+        <circle class="led" style="animation-delay:.3s" cx="114" cy="77" r="4" fill="#ff7043"/>
+        <circle class="led" style="animation-delay:.6s" cx="126" cy="77" r="4" fill="#ff7043"/>
+        <circle class="led" style="animation-delay:.9s" cx="138" cy="77" r="4" fill="#ffd23f"/>
+        <circle class="led" style="animation-delay:1.2s" cx="150" cy="77" r="4" fill="#ffd23f"/>
+        <circle class="led" style="animation-delay:1.5s" cx="162" cy="77" r="4" fill="#9be564"/>
+        <rect x="196" y="50" width="30" height="54" rx="6" fill="#333"/>
+      </g></g>
+    </svg>
+  </div></section>
+</main>
+
+<footer>מכללת מקיף אחווה ירכא</footer>
+
+<div class="sticky">
+  <a class="btn btn-wa wa-link" href="https://wa.me/972509985077" target="_blank" rel="noopener">שלחו הודעה בוואטסאפ</a>
+  <a class="btn btn-form" href="#register">השאירו פרטים</a>
+</div>
+
+<script>
+(function(){
+  var msg = "שלום אמאל, אני מתעניין/ת במסלולי ההנדסאים (חשמל / אלקטרוניקה) במכללת מקיף אחווה ירכא. אשמח לקבל פרטים.";
+  var url = "https://wa.me/972509985077?text=" + encodeURIComponent(msg);
+  document.querySelectorAll(".wa-link").forEach(function(a){ a.href = url; });
+  var n = document.getElementById("num");
+  var t = n.textContent;
+  n.textContent = "";
+  t.split("").forEach(function(c,i){
+    var s = document.createElement("span");
+    s.className = "d"; s.textContent = c; s.style.setProperty("--i", i);
+    s.setAttribute("aria-hidden","true");
+    n.appendChild(s);
+  });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ n.classList.add("in"); io.disconnect(); } });
+    }, {threshold:.6});
+    io.observe(n);
+  } else { n.classList.add("in"); }
+  var f = document.getElementById("regform");
+  if (f) {
+    var s = document.getElementById("sent");
+    var btn = f.querySelector("button[type=submit]");
+    f.addEventListener("submit", function(e){
+      e.preventDefault();
+      btn.disabled = true; btn.textContent = "שולחים...";
+      s.style.display = "none";
+      fetch(f.action, {method:"POST", body:new FormData(f), headers:{"Accept":"application/json"}})
+        .then(function(r){
+          if (!r.ok) throw new Error("bad");
+          f.reset();
+          s.textContent = "תודה! הפרטים נשלחו, והרכזת תחזור אליך בהקדם.";
+        })
+        .catch(function(){
+          s.innerHTML = 'משהו השתבש בשליחה. נסו שוב או <a href="https://wa.me/972509985077" target="_blank" rel="noopener">שלחו הודעה בוואטסאפ</a>.';
+        })
+        .then(function(){ s.style.display = "block"; btn.disabled = false; btn.textContent = "שליחה"; });
+    });
+  }
+})();
+</script>
+</body>
+</html>
